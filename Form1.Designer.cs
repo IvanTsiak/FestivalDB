@@ -29,43 +29,57 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-        button1 = new System.Windows.Forms.Button();
-        checkBox1 = new System.Windows.Forms.CheckBox();
+        tabControl1 = new System.Windows.Forms.TabControl();
+        tabPage1 = new System.Windows.Forms.TabPage();
+        tabPage2 = new System.Windows.Forms.TabPage();
+        tabControl1.SuspendLayout();
         SuspendLayout();
         // 
-        // button1
+        // tabControl1
         // 
-        button1.Location = new System.Drawing.Point(216, 57);
-        button1.Name = "button1";
-        button1.Size = new System.Drawing.Size(156, 79);
-        button1.TabIndex = 0;
-        button1.Text = "button1";
-        button1.UseVisualStyleBackColor = true;
+        tabControl1.Controls.Add(tabPage1);
+        tabControl1.Controls.Add(tabPage2);
+        tabControl1.Location = new System.Drawing.Point(1, 3);
+        tabControl1.Name = "tabControl1";
+        tabControl1.SelectedIndex = 0;
+        tabControl1.Size = new System.Drawing.Size(797, 449);
+        tabControl1.TabIndex = 0;
         // 
-        // checkBox1
+        // tabPage1
         // 
-        checkBox1.Location = new System.Drawing.Point(356, 298);
-        checkBox1.Name = "checkBox1";
-        checkBox1.Size = new System.Drawing.Size(105, 73);
-        checkBox1.TabIndex = 1;
-        checkBox1.Text = "checkBox1";
-        checkBox1.UseVisualStyleBackColor = true;
+        tabPage1.Location = new System.Drawing.Point(4, 29);
+        tabPage1.Name = "tabPage1";
+        tabPage1.Padding = new System.Windows.Forms.Padding(3);
+        tabPage1.Size = new System.Drawing.Size(789, 416);
+        tabPage1.TabIndex = 0;
+        tabPage1.Text = "tabPage1";
+        tabPage1.UseVisualStyleBackColor = true;
+        // 
+        // tabPage2
+        // 
+        tabPage2.Location = new System.Drawing.Point(4, 29);
+        tabPage2.Name = "tabPage2";
+        tabPage2.Padding = new System.Windows.Forms.Padding(3);
+        tabPage2.Size = new System.Drawing.Size(789, 416);
+        tabPage2.TabIndex = 1;
+        tabPage2.Text = "tabPage2";
+        tabPage2.UseVisualStyleBackColor = true;
         // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(800, 450);
-        Controls.Add(checkBox1);
-        Controls.Add(button1);
+        Controls.Add(tabControl1);
         Text = "Form1";
+        Load += Form1_Load;
+        tabControl1.ResumeLayout(false);
         ResumeLayout(false);
     }
 
-    private System.Windows.Forms.Button button1;
-    private System.ComponentModel.BackgroundWorker backgroundWorker1;
-    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.TabControl tabControl1;
+    private System.Windows.Forms.TabPage tabPage1;
+    private System.Windows.Forms.TabPage tabPage2;
 
     #endregion
 }
