@@ -14,4 +14,13 @@
       <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="11.0.0-preview.4.26230.115" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="CRUD.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Queries.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
 </Project>
