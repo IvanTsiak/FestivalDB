@@ -32,21 +32,78 @@ partial class CRUD
     private void InitializeComponent()
     {
         Return = new Button();
-        SponsorsTab = new TabControl();
+        CRUDTab = new TabControl();
         SponsorsPage = new TabPage();
         panel1 = new Panel();
         UpdateBtn = new Button();
         DeleteBtn = new Button();
         AddBtn = new Button();
         dgvSponsors = new DataGridView();
-        Company_name = new DataGridViewTextBoxColumn();
-        Email = new DataGridViewTextBoxColumn();
         label1 = new Label();
-        tabPage2 = new TabPage();
-        SponsorsTab.SuspendLayout();
+        FestivalsTab = new TabPage();
+        dgvFinancing = new DataGridView();
+        label4 = new Label();
+        panel4 = new Panel();
+        button7 = new Button();
+        button8 = new Button();
+        button9 = new Button();
+        dgvEvents = new DataGridView();
+        label3 = new Label();
+        panel2 = new Panel();
+        button4 = new Button();
+        button5 = new Button();
+        button6 = new Button();
+        dgvFestivals = new DataGridView();
+        label2 = new Label();
+        panel3 = new Panel();
+        button2 = new Button();
+        button3 = new Button();
+        button1 = new Button();
+        StaffTab = new TabPage();
+        dgvService = new DataGridView();
+        label8 = new Label();
+        panel8 = new Panel();
+        button20 = new Button();
+        button21 = new Button();
+        dgvTechnicalWorker = new DataGridView();
+        label7 = new Label();
+        panel7 = new Panel();
+        button16 = new Button();
+        button17 = new Button();
+        button18 = new Button();
+        dgvLeader = new DataGridView();
+        label6 = new Label();
+        panel6 = new Panel();
+        button13 = new Button();
+        button14 = new Button();
+        button15 = new Button();
+        dgvStaff = new DataGridView();
+        label5 = new Label();
+        panel5 = new Panel();
+        button10 = new Button();
+        button11 = new Button();
+        button12 = new Button();
+        ScenesTab = new TabPage();
+        CRUDTab.SuspendLayout();
         SponsorsPage.SuspendLayout();
         panel1.SuspendLayout();
         ((ISupportInitialize)dgvSponsors).BeginInit();
+        FestivalsTab.SuspendLayout();
+        ((ISupportInitialize)dgvFinancing).BeginInit();
+        panel4.SuspendLayout();
+        ((ISupportInitialize)dgvEvents).BeginInit();
+        panel2.SuspendLayout();
+        ((ISupportInitialize)dgvFestivals).BeginInit();
+        panel3.SuspendLayout();
+        StaffTab.SuspendLayout();
+        ((ISupportInitialize)dgvService).BeginInit();
+        panel8.SuspendLayout();
+        ((ISupportInitialize)dgvTechnicalWorker).BeginInit();
+        panel7.SuspendLayout();
+        ((ISupportInitialize)dgvLeader).BeginInit();
+        panel6.SuspendLayout();
+        ((ISupportInitialize)dgvStaff).BeginInit();
+        panel5.SuspendLayout();
         SuspendLayout();
         // 
         // Return
@@ -59,15 +116,18 @@ partial class CRUD
         Return.UseVisualStyleBackColor = true;
         Return.Click += Return_Click;
         // 
-        // SponsorsTab
+        // CRUDTab
         // 
-        SponsorsTab.Controls.Add(SponsorsPage);
-        SponsorsTab.Controls.Add(tabPage2);
-        SponsorsTab.Location = new Point(0, 23);
-        SponsorsTab.Name = "SponsorsTab";
-        SponsorsTab.SelectedIndex = 0;
-        SponsorsTab.Size = new Size(802, 448);
-        SponsorsTab.TabIndex = 1;
+        CRUDTab.Controls.Add(SponsorsPage);
+        CRUDTab.Controls.Add(FestivalsTab);
+        CRUDTab.Controls.Add(StaffTab);
+        CRUDTab.Controls.Add(ScenesTab);
+        CRUDTab.Location = new Point(0, 23);
+        CRUDTab.Name = "CRUDTab";
+        CRUDTab.SelectedIndex = 0;
+        CRUDTab.Size = new Size(802, 448);
+        CRUDTab.TabIndex = 1;
+        CRUDTab.SelectedIndexChanged += CRUDTab_SelectIndexChanged;
         // 
         // SponsorsPage
         // 
@@ -81,7 +141,7 @@ partial class CRUD
         SponsorsPage.TabIndex = 0;
         SponsorsPage.Text = "Спонсори";
         SponsorsPage.UseVisualStyleBackColor = true;
-        SponsorsPage.Click += tabPage1_Click;
+        SponsorsPage.Click += CRUDTab_SelectIndexChanged;
         // 
         // panel1
         // 
@@ -101,7 +161,7 @@ partial class CRUD
         UpdateBtn.TabIndex = 5;
         UpdateBtn.Text = "Редагувати";
         UpdateBtn.UseVisualStyleBackColor = true;
-        UpdateBtn.Click += button1_Click_2;
+        UpdateBtn.Click += btnEdit_Click;
         // 
         // DeleteBtn
         // 
@@ -111,7 +171,7 @@ partial class CRUD
         DeleteBtn.TabIndex = 4;
         DeleteBtn.Text = "Видалити";
         DeleteBtn.UseVisualStyleBackColor = true;
-        DeleteBtn.Click += button1_Click;
+        DeleteBtn.Click += btnDelete_Click;
         // 
         // AddBtn
         // 
@@ -121,12 +181,12 @@ partial class CRUD
         AddBtn.TabIndex = 2;
         AddBtn.Text = "Додати";
         AddBtn.UseVisualStyleBackColor = true;
+        AddBtn.Click += btnAdd_Click;
         // 
         // dgvSponsors
         // 
         dgvSponsors.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         dgvSponsors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-        dgvSponsors.Columns.AddRange(new DataGridViewColumn[] { Company_name, Email });
         dgvSponsors.Location = new Point(-4, 27);
         dgvSponsors.Name = "dgvSponsors";
         dgvSponsors.RowHeadersWidth = 51;
@@ -134,20 +194,6 @@ partial class CRUD
         dgvSponsors.TabIndex = 2;
         dgvSponsors.Text = "dataGridView1";
         dgvSponsors.CellContentClick += dataGridView1_CellContentClick;
-        // 
-        // Company_name
-        // 
-        Company_name.HeaderText = "Назва компаній";
-        Company_name.MinimumWidth = 6;
-        Company_name.Name = "Company_name";
-        Company_name.ReadOnly = true;
-        // 
-        // Email
-        // 
-        Email.HeaderText = "Електронна пошта";
-        Email.MinimumWidth = 6;
-        Email.Name = "Email";
-        Email.ReadOnly = true;
         // 
         // label1
         // 
@@ -158,16 +204,454 @@ partial class CRUD
         label1.Text = "Спонсори";
         label1.Click += label1_Click;
         // 
-        // tabPage2
+        // FestivalsTab
         // 
-        tabPage2.Location = new Point(4, 29);
-        tabPage2.Name = "tabPage2";
-        tabPage2.Padding = new Padding(3);
-        tabPage2.Size = new Size(794, 415);
-        tabPage2.TabIndex = 1;
-        tabPage2.Text = "tabPage2";
-        tabPage2.UseVisualStyleBackColor = true;
-        tabPage2.Click += tabPage2_Click;
+        FestivalsTab.AutoScroll = true;
+        FestivalsTab.AutoScrollMinSize = new Size(0, 15000);
+        FestivalsTab.Controls.Add(dgvFinancing);
+        FestivalsTab.Controls.Add(label4);
+        FestivalsTab.Controls.Add(panel4);
+        FestivalsTab.Controls.Add(dgvEvents);
+        FestivalsTab.Controls.Add(label3);
+        FestivalsTab.Controls.Add(panel2);
+        FestivalsTab.Controls.Add(dgvFestivals);
+        FestivalsTab.Controls.Add(label2);
+        FestivalsTab.Controls.Add(panel3);
+        FestivalsTab.Location = new Point(4, 29);
+        FestivalsTab.Name = "FestivalsTab";
+        FestivalsTab.Padding = new Padding(3);
+        FestivalsTab.Size = new Size(794, 415);
+        FestivalsTab.TabIndex = 1;
+        FestivalsTab.Text = "Фестивалі";
+        FestivalsTab.UseVisualStyleBackColor = true;
+        FestivalsTab.Click += tabPage2_Click;
+        // 
+        // dgvFinancing
+        // 
+        dgvFinancing.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvFinancing.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvFinancing.Location = new Point(0, 501);
+        dgvFinancing.Name = "dgvFinancing";
+        dgvFinancing.RowHeadersWidth = 51;
+        dgvFinancing.Size = new Size(774, 142);
+        dgvFinancing.TabIndex = 17;
+        dgvFinancing.Text = "dataGridView1";
+        // 
+        // label4
+        // 
+        label4.Location = new Point(0, 474);
+        label4.Name = "label4";
+        label4.Size = new Size(153, 24);
+        label4.TabIndex = 16;
+        label4.Text = "Фінансування";
+        // 
+        // panel4
+        // 
+        panel4.Controls.Add(button7);
+        panel4.Controls.Add(button8);
+        panel4.Controls.Add(button9);
+        panel4.Location = new Point(1, 649);
+        panel4.Name = "panel4";
+        panel4.Size = new Size(773, 43);
+        panel4.TabIndex = 18;
+        // 
+        // button7
+        // 
+        button7.Location = new Point(204, 0);
+        button7.Name = "button7";
+        button7.Size = new Size(94, 43);
+        button7.TabIndex = 5;
+        button7.Text = "Редагувати";
+        button7.UseVisualStyleBackColor = true;
+        button7.Click += btnEditFinancing_Click;
+        // 
+        // button8
+        // 
+        button8.Location = new Point(102, 0);
+        button8.Name = "button8";
+        button8.Size = new Size(96, 43);
+        button8.TabIndex = 4;
+        button8.Text = "Видалити";
+        button8.UseVisualStyleBackColor = true;
+        // 
+        // button9
+        // 
+        button9.Location = new Point(0, 0);
+        button9.Name = "button9";
+        button9.Size = new Size(96, 43);
+        button9.TabIndex = 2;
+        button9.Text = "Додати";
+        button9.UseVisualStyleBackColor = true;
+        button9.Click += btnAddFinancing_Click;
+        // 
+        // dgvEvents
+        // 
+        dgvEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvEvents.Location = new Point(0, 265);
+        dgvEvents.Name = "dgvEvents";
+        dgvEvents.RowHeadersWidth = 51;
+        dgvEvents.Size = new Size(774, 142);
+        dgvEvents.TabIndex = 14;
+        dgvEvents.Text = "dataGridView1";
+        // 
+        // label3
+        // 
+        label3.Location = new Point(0, 238);
+        label3.Name = "label3";
+        label3.Size = new Size(153, 24);
+        label3.TabIndex = 13;
+        label3.Text = "Події";
+        // 
+        // panel2
+        // 
+        panel2.Controls.Add(button4);
+        panel2.Controls.Add(button5);
+        panel2.Controls.Add(button6);
+        panel2.Location = new Point(1, 413);
+        panel2.Name = "panel2";
+        panel2.Size = new Size(773, 43);
+        panel2.TabIndex = 15;
+        panel2.Paint += panel2_Paint;
+        // 
+        // button4
+        // 
+        button4.Location = new Point(204, 0);
+        button4.Name = "button4";
+        button4.Size = new Size(94, 43);
+        button4.TabIndex = 5;
+        button4.Text = "Редагувати";
+        button4.UseVisualStyleBackColor = true;
+        button4.Click += btnEditEvent_Click;
+        // 
+        // button5
+        // 
+        button5.Location = new Point(102, 0);
+        button5.Name = "button5";
+        button5.Size = new Size(96, 43);
+        button5.TabIndex = 4;
+        button5.Text = "Видалити";
+        button5.UseVisualStyleBackColor = true;
+        // 
+        // button6
+        // 
+        button6.Location = new Point(0, 0);
+        button6.Name = "button6";
+        button6.Size = new Size(96, 43);
+        button6.TabIndex = 2;
+        button6.Text = "Додати";
+        button6.UseVisualStyleBackColor = true;
+        button6.Click += btnAddEvent_Click;
+        // 
+        // dgvFestivals
+        // 
+        dgvFestivals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvFestivals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvFestivals.Location = new Point(0, 28);
+        dgvFestivals.Name = "dgvFestivals";
+        dgvFestivals.RowHeadersWidth = 51;
+        dgvFestivals.Size = new Size(774, 142);
+        dgvFestivals.TabIndex = 11;
+        dgvFestivals.Text = "dataGridView1";
+        // 
+        // label2
+        // 
+        label2.Location = new Point(0, 1);
+        label2.Name = "label2";
+        label2.Size = new Size(153, 24);
+        label2.TabIndex = 10;
+        label2.Text = "Фестивалі";
+        // 
+        // panel3
+        // 
+        panel3.Controls.Add(button2);
+        panel3.Controls.Add(button3);
+        panel3.Controls.Add(button1);
+        panel3.Location = new Point(1, 176);
+        panel3.Name = "panel3";
+        panel3.Size = new Size(773, 43);
+        panel3.TabIndex = 12;
+        // 
+        // button2
+        // 
+        button2.Location = new Point(204, 0);
+        button2.Name = "button2";
+        button2.Size = new Size(94, 43);
+        button2.TabIndex = 5;
+        button2.Text = "Редагувати";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += btnEditFestival_Click;
+        // 
+        // button3
+        // 
+        button3.Location = new Point(102, 0);
+        button3.Name = "button3";
+        button3.Size = new Size(96, 43);
+        button3.TabIndex = 4;
+        button3.Text = "Видалити";
+        button3.UseVisualStyleBackColor = true;
+        // 
+        // button1
+        // 
+        button1.Location = new Point(0, 0);
+        button1.Name = "button1";
+        button1.Size = new Size(96, 43);
+        button1.TabIndex = 2;
+        button1.Text = "Додати";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += btnAddFestival_Click;
+        // 
+        // StaffTab
+        // 
+        StaffTab.AutoScroll = true;
+        StaffTab.AutoScrollMinSize = new Size(0, 1500);
+        StaffTab.Controls.Add(dgvService);
+        StaffTab.Controls.Add(label8);
+        StaffTab.Controls.Add(panel8);
+        StaffTab.Controls.Add(dgvTechnicalWorker);
+        StaffTab.Controls.Add(label7);
+        StaffTab.Controls.Add(panel7);
+        StaffTab.Controls.Add(dgvLeader);
+        StaffTab.Controls.Add(label6);
+        StaffTab.Controls.Add(panel6);
+        StaffTab.Controls.Add(dgvStaff);
+        StaffTab.Controls.Add(label5);
+        StaffTab.Controls.Add(panel5);
+        StaffTab.Location = new Point(4, 29);
+        StaffTab.Name = "StaffTab";
+        StaffTab.Padding = new Padding(3);
+        StaffTab.Size = new Size(794, 415);
+        StaffTab.TabIndex = 2;
+        StaffTab.Text = "Персонал";
+        StaffTab.UseVisualStyleBackColor = true;
+        // 
+        // dgvService
+        // 
+        dgvService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvService.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvService.Location = new Point(0, 699);
+        dgvService.Name = "dgvService";
+        dgvService.RowHeadersWidth = 51;
+        dgvService.Size = new Size(774, 142);
+        dgvService.TabIndex = 23;
+        dgvService.Text = "dataGridView1";
+        // 
+        // label8
+        // 
+        label8.Location = new Point(0, 672);
+        label8.Name = "label8";
+        label8.Size = new Size(153, 24);
+        label8.TabIndex = 22;
+        label8.Text = "Обслуговування";
+        // 
+        // panel8
+        // 
+        panel8.Controls.Add(button20);
+        panel8.Controls.Add(button21);
+        panel8.Location = new Point(1, 847);
+        panel8.Name = "panel8";
+        panel8.Size = new Size(773, 43);
+        panel8.TabIndex = 24;
+        // 
+        // button20
+        // 
+        button20.Location = new Point(102, 0);
+        button20.Name = "button20";
+        button20.Size = new Size(96, 43);
+        button20.TabIndex = 4;
+        button20.Text = "Видалити";
+        button20.UseVisualStyleBackColor = true;
+        // 
+        // button21
+        // 
+        button21.Location = new Point(0, 0);
+        button21.Name = "button21";
+        button21.Size = new Size(96, 43);
+        button21.TabIndex = 2;
+        button21.Text = "Додати";
+        button21.UseVisualStyleBackColor = true;
+        button21.Click += btnAddService_Click;
+        // 
+        // dgvTechnicalWorker
+        // 
+        dgvTechnicalWorker.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvTechnicalWorker.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvTechnicalWorker.Location = new Point(1, 474);
+        dgvTechnicalWorker.Name = "dgvTechnicalWorker";
+        dgvTechnicalWorker.RowHeadersWidth = 51;
+        dgvTechnicalWorker.Size = new Size(774, 142);
+        dgvTechnicalWorker.TabIndex = 20;
+        dgvTechnicalWorker.Text = "dataGridView1";
+        // 
+        // label7
+        // 
+        label7.Location = new Point(1, 447);
+        label7.Name = "label7";
+        label7.Size = new Size(153, 24);
+        label7.TabIndex = 19;
+        label7.Text = "Технічні працівники";
+        // 
+        // panel7
+        // 
+        panel7.Controls.Add(button16);
+        panel7.Controls.Add(button17);
+        panel7.Controls.Add(button18);
+        panel7.Location = new Point(2, 622);
+        panel7.Name = "panel7";
+        panel7.Size = new Size(773, 43);
+        panel7.TabIndex = 21;
+        // 
+        // button16
+        // 
+        button16.Location = new Point(204, 0);
+        button16.Name = "button16";
+        button16.Size = new Size(94, 43);
+        button16.TabIndex = 5;
+        button16.Text = "Редагувати";
+        button16.UseVisualStyleBackColor = true;
+        button16.Click += btnEditTechWorker_Click;
+        // 
+        // button17
+        // 
+        button17.Location = new Point(102, 0);
+        button17.Name = "button17";
+        button17.Size = new Size(96, 43);
+        button17.TabIndex = 4;
+        button17.Text = "Видалити";
+        button17.UseVisualStyleBackColor = true;
+        // 
+        // button18
+        // 
+        button18.Location = new Point(0, 0);
+        button18.Name = "button18";
+        button18.Size = new Size(96, 43);
+        button18.TabIndex = 2;
+        button18.Text = "Додати";
+        button18.UseVisualStyleBackColor = true;
+        button18.Click += btnAddTechWorker_Click;
+        // 
+        // dgvLeader
+        // 
+        dgvLeader.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvLeader.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvLeader.Location = new Point(0, 253);
+        dgvLeader.Name = "dgvLeader";
+        dgvLeader.RowHeadersWidth = 51;
+        dgvLeader.Size = new Size(774, 142);
+        dgvLeader.TabIndex = 17;
+        dgvLeader.Text = "dataGridView1";
+        // 
+        // label6
+        // 
+        label6.Location = new Point(0, 226);
+        label6.Name = "label6";
+        label6.Size = new Size(153, 24);
+        label6.TabIndex = 16;
+        label6.Text = "Керівники";
+        // 
+        // panel6
+        // 
+        panel6.Controls.Add(button13);
+        panel6.Controls.Add(button14);
+        panel6.Controls.Add(button15);
+        panel6.Location = new Point(1, 401);
+        panel6.Name = "panel6";
+        panel6.Size = new Size(773, 43);
+        panel6.TabIndex = 18;
+        // 
+        // button13
+        // 
+        button13.Location = new Point(204, 0);
+        button13.Name = "button13";
+        button13.Size = new Size(94, 43);
+        button13.TabIndex = 5;
+        button13.Text = "Редагувати";
+        button13.UseVisualStyleBackColor = true;
+        // 
+        // button14
+        // 
+        button14.Location = new Point(102, 0);
+        button14.Name = "button14";
+        button14.Size = new Size(96, 43);
+        button14.TabIndex = 4;
+        button14.Text = "Видалити";
+        button14.UseVisualStyleBackColor = true;
+        // 
+        // button15
+        // 
+        button15.Location = new Point(0, 0);
+        button15.Name = "button15";
+        button15.Size = new Size(96, 43);
+        button15.TabIndex = 2;
+        button15.Text = "Додати";
+        button15.UseVisualStyleBackColor = true;
+        // 
+        // dgvStaff
+        // 
+        dgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvStaff.Location = new Point(0, 32);
+        dgvStaff.Name = "dgvStaff";
+        dgvStaff.RowHeadersWidth = 51;
+        dgvStaff.Size = new Size(774, 142);
+        dgvStaff.TabIndex = 14;
+        dgvStaff.Text = "dataGridView1";
+        // 
+        // label5
+        // 
+        label5.Location = new Point(0, 5);
+        label5.Name = "label5";
+        label5.Size = new Size(153, 24);
+        label5.TabIndex = 13;
+        label5.Text = "Персонал";
+        label5.Click += label5_Click;
+        // 
+        // panel5
+        // 
+        panel5.Controls.Add(button10);
+        panel5.Controls.Add(button11);
+        panel5.Controls.Add(button12);
+        panel5.Location = new Point(1, 180);
+        panel5.Name = "panel5";
+        panel5.Size = new Size(773, 43);
+        panel5.TabIndex = 15;
+        // 
+        // button10
+        // 
+        button10.Location = new Point(204, 0);
+        button10.Name = "button10";
+        button10.Size = new Size(94, 43);
+        button10.TabIndex = 5;
+        button10.Text = "Редагувати";
+        button10.UseVisualStyleBackColor = true;
+        // 
+        // button11
+        // 
+        button11.Location = new Point(102, 0);
+        button11.Name = "button11";
+        button11.Size = new Size(96, 43);
+        button11.TabIndex = 4;
+        button11.Text = "Видалити";
+        button11.UseVisualStyleBackColor = true;
+        // 
+        // button12
+        // 
+        button12.Location = new Point(0, 0);
+        button12.Name = "button12";
+        button12.Size = new Size(96, 43);
+        button12.TabIndex = 2;
+        button12.Text = "Додати";
+        button12.UseVisualStyleBackColor = true;
+        // 
+        // ScenesTab
+        // 
+        ScenesTab.Location = new Point(4, 29);
+        ScenesTab.Name = "ScenesTab";
+        ScenesTab.Padding = new Padding(3);
+        ScenesTab.Size = new Size(794, 415);
+        ScenesTab.TabIndex = 3;
+        ScenesTab.Text = "Сцени";
+        ScenesTab.UseVisualStyleBackColor = true;
         // 
         // CRUD
         // 
@@ -175,13 +659,29 @@ partial class CRUD
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(800, 471);
         Controls.Add(Return);
-        Controls.Add(SponsorsTab);
+        Controls.Add(CRUDTab);
         Name = "CRUD";
         Text = "CRUD";
-        SponsorsTab.ResumeLayout(false);
+        CRUDTab.ResumeLayout(false);
         SponsorsPage.ResumeLayout(false);
         panel1.ResumeLayout(false);
         ((ISupportInitialize)dgvSponsors).EndInit();
+        FestivalsTab.ResumeLayout(false);
+        ((ISupportInitialize)dgvFinancing).EndInit();
+        panel4.ResumeLayout(false);
+        ((ISupportInitialize)dgvEvents).EndInit();
+        panel2.ResumeLayout(false);
+        ((ISupportInitialize)dgvFestivals).EndInit();
+        panel3.ResumeLayout(false);
+        StaffTab.ResumeLayout(false);
+        ((ISupportInitialize)dgvService).EndInit();
+        panel8.ResumeLayout(false);
+        ((ISupportInitialize)dgvTechnicalWorker).EndInit();
+        panel7.ResumeLayout(false);
+        ((ISupportInitialize)dgvLeader).EndInit();
+        panel6.ResumeLayout(false);
+        ((ISupportInitialize)dgvStaff).EndInit();
+        panel5.ResumeLayout(false);
         ResumeLayout(false);
     }
 
@@ -189,21 +689,60 @@ partial class CRUD
     private System.Windows.Forms.Button AddBtn;
     private System.Windows.Forms.Button DeleteBtn;
 
-    private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-
-    private System.Windows.Forms.DataGridViewTextBoxColumn Company_name;
-
     private System.Windows.Forms.DataGridView dgvSponsors;
 
     private System.Windows.Forms.Label label1;
 
-    private System.Windows.Forms.TabControl SponsorsTab;
+    private System.Windows.Forms.TabControl CRUDTab;
     private System.Windows.Forms.TabPage SponsorsPage;
-    private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.TabPage FestivalsTab;
 
     private System.Windows.Forms.Button Return;
 
     #endregion
 
     private Button UpdateBtn;
+    private DataGridView dgvFestivals;
+    private Label label2;
+    private Panel panel3;
+    private Button button2;
+    private Button button3;
+    private Button button1;
+    private DataGridView dgvEvents;
+    private Label label3;
+    private Panel panel2;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+    private DataGridView dgvFinancing;
+    private Label label4;
+    private Panel panel4;
+    private Button button7;
+    private Button button8;
+    private Button button9;
+    private TabPage StaffTab;
+    private DataGridView dgvService;
+    private Label label8;
+    private Panel panel8;
+    private Button button20;
+    private Button button21;
+    private DataGridView dgvTechnicalWorker;
+    private Label label7;
+    private Panel panel7;
+    private Button button16;
+    private Button button17;
+    private Button button18;
+    private DataGridView dgvLeader;
+    private Label label6;
+    private Panel panel6;
+    private Button button13;
+    private Button button14;
+    private Button button15;
+    private DataGridView dgvStaff;
+    private Label label5;
+    private Panel panel5;
+    private Button button10;
+    private Button button11;
+    private Button button12;
+    private TabPage ScenesTab;
 }

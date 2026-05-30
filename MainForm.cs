@@ -9,7 +9,7 @@ public partial class MainForm : Form
 
     private void Form1_Load(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
+        
     }
     
     private void ToCRUDButton_Click(object sender, EventArgs e)
@@ -27,6 +27,6 @@ public partial class MainForm : Form
         
         queriesForm.Show();
         
-        this.Hide();
+        this.Close();
     }
 }

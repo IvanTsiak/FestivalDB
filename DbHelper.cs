@@ -11,11 +11,16 @@ public class DbHelper
     static DbHelper()
     {
         var builder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory) 
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 
         IConfiguration config = builder.Build();
         ConnectionString = config.GetConnectionString("DefaultConnection");
+        
+        if (string.IsNullOrEmpty(ConnectionString))
+        {
+            throw new InvalidOperationException("No connection string found in the appsettings.json file");
+        }
     }
 
     public static DataTable ExecuteQuery(string query, SqlParameter[]? parameters = null)
