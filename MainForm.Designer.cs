@@ -29,15 +29,16 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
-        ToCRUDButton = new System.Windows.Forms.Button();
-        ToQueriesButton = new System.Windows.Forms.Button();
+        ToCRUDButton = new Button();
+        ToQueriesButton = new Button();
+        button1 = new Button();
         SuspendLayout();
         // 
         // ToCRUDButton
         // 
-        ToCRUDButton.Location = new System.Drawing.Point(184, 271);
+        ToCRUDButton.Location = new Point(184, 271);
         ToCRUDButton.Name = "ToCRUDButton";
-        ToCRUDButton.Size = new System.Drawing.Size(160, 52);
+        ToCRUDButton.Size = new Size(160, 52);
         ToCRUDButton.TabIndex = 0;
         ToCRUDButton.Text = "Управління таблицями\r\n\r\n\r\n";
         ToCRUDButton.UseVisualStyleBackColor = true;
@@ -45,22 +46,33 @@ partial class MainForm
         // 
         // ToQueriesButton
         // 
-        ToQueriesButton.Location = new System.Drawing.Point(505, 271);
+        ToQueriesButton.Location = new Point(505, 271);
         ToQueriesButton.Name = "ToQueriesButton";
-        ToQueriesButton.Size = new System.Drawing.Size(160, 52);
+        ToQueriesButton.Size = new Size(160, 52);
         ToQueriesButton.TabIndex = 1;
-        ToQueriesButton.Text = "Запити";
+        ToQueriesButton.Text = "Параметризовані запити";
         ToQueriesButton.UseVisualStyleBackColor = true;
         ToQueriesButton.Click += ToQueriesButton_Click;
         // 
+        // button1
+        // 
+        button1.Location = new Point(337, 376);
+        button1.Name = "button1";
+        button1.Size = new Size(160, 70);
+        button1.TabIndex = 2;
+        button1.Text = "Запити із множинними порівняннями";
+        button1.UseVisualStyleBackColor = true;
+        // 
         // MainForm
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(852, 485);
+        AutoScaleDimensions = new SizeF(8F, 20F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(852, 485);
+        Controls.Add(button1);
         Controls.Add(ToQueriesButton);
         Controls.Add(ToCRUDButton);
-        StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+        Name = "MainForm";
+        StartPosition = FormStartPosition.CenterScreen;
         Text = "FestivalsBD";
         Load += Form1_Load;
         ResumeLayout(false);
@@ -71,4 +83,6 @@ partial class MainForm
     private System.Windows.Forms.Button ToCRUDButton;
 
     #endregion
+
+    private Button button1;
 }

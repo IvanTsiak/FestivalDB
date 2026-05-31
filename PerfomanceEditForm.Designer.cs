@@ -1,6 +1,6 @@
 ﻿namespace FestivalsBD
 {
-    partial class FinancingEditForm
+    partial class PerfomanceEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
+            cmbStage = new ComboBox();
+            label3 = new Label();
+            cmbEvent = new ComboBox();
             btnCancel = new Button();
             btnSave = new Button();
-            label2 = new Label();
             label1 = new Label();
-            cmbCompany = new ComboBox();
-            cmbFestival = new ComboBox();
-            label3 = new Label();
-            txtAmount = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)txtAmount).BeginInit();
+            cmbParticipant = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
+            // 
+            // cmbStage
+            // 
+            cmbStage.FormattingEnabled = true;
+            cmbStage.Location = new Point(10, 95);
+            cmbStage.Name = "cmbStage";
+            cmbStage.Size = new Size(151, 28);
+            cmbStage.TabIndex = 38;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(47, 20);
+            label3.TabIndex = 37;
+            label3.Text = "Stage";
+            // 
+            // cmbEvent
+            // 
+            cmbEvent.FormattingEnabled = true;
+            cmbEvent.Location = new Point(10, 40);
+            cmbEvent.Name = "cmbEvent";
+            cmbEvent.Size = new Size(151, 28);
+            cmbEvent.TabIndex = 36;
             // 
             // btnCancel
             // 
             btnCancel.Location = new Point(342, 256);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 29);
-            btnCancel.TabIndex = 21;
+            btnCancel.TabIndex = 35;
             btnCancel.Text = "Скасувати";
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
@@ -54,91 +78,65 @@
             btnSave.Location = new Point(242, 256);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 29);
-            btnSave.TabIndex = 20;
+            btnSave.TabIndex = 34;
             btnSave.Text = "Зберегти";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 125);
-            label2.Name = "label2";
-            label2.Size = new Size(62, 20);
-            label2.TabIndex = 19;
-            label2.Text = "Amount";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(10, 17);
             label1.Name = "label1";
-            label1.Size = new Size(116, 20);
-            label1.TabIndex = 17;
-            label1.Text = "Company Name";
+            label1.Size = new Size(45, 20);
+            label1.TabIndex = 33;
+            label1.Text = "Event";
             // 
-            // cmbCompany
+            // cmbParticipant
             // 
-            cmbCompany.FormattingEnabled = true;
-            cmbCompany.Location = new Point(10, 40);
-            cmbCompany.Name = "cmbCompany";
-            cmbCompany.Size = new Size(151, 28);
-            cmbCompany.TabIndex = 22;
+            cmbParticipant.FormattingEnabled = true;
+            cmbParticipant.Location = new Point(10, 151);
+            cmbParticipant.Name = "cmbParticipant";
+            cmbParticipant.Size = new Size(151, 28);
+            cmbParticipant.TabIndex = 40;
             // 
-            // cmbFestival
+            // label2
             // 
-            cmbFestival.FormattingEnabled = true;
-            cmbFestival.Location = new Point(10, 95);
-            cmbFestival.Name = "cmbFestival";
-            cmbFestival.Size = new Size(151, 28);
-            cmbFestival.TabIndex = 24;
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 128);
+            label2.Name = "label2";
+            label2.Size = new Size(79, 20);
+            label2.TabIndex = 39;
+            label2.Text = "Participant";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 72);
-            label3.Name = "label3";
-            label3.Size = new Size(58, 20);
-            label3.TabIndex = 23;
-            label3.Text = "Festival";
-            // 
-            // txtAmount
-            // 
-            txtAmount.Location = new Point(10, 148);
-            txtAmount.Maximum = new decimal(new int[] { 1215752192, 23, 0, 0 });
-            txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(150, 27);
-            txtAmount.TabIndex = 25;
-            // 
-            // FinancingEditForm
+            // PerfomanceEditForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(447, 303);
-            Controls.Add(txtAmount);
-            Controls.Add(cmbFestival);
+            Controls.Add(cmbParticipant);
+            Controls.Add(label2);
+            Controls.Add(cmbStage);
             Controls.Add(label3);
-            Controls.Add(cmbCompany);
+            Controls.Add(cmbEvent);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
-            Controls.Add(label2);
             Controls.Add(label1);
-            Name = "FinancingEditForm";
-            Text = "FinancingEditForm";
-            ((System.ComponentModel.ISupportInitialize)txtAmount).EndInit();
+            Name = "PerfomanceEditForm";
+            Text = "PerfomanceEditForm";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
+        private ComboBox cmbStage;
+        private Label label3;
+        private ComboBox cmbEvent;
         private Button btnCancel;
         private Button btnSave;
-        private Label label2;
         private Label label1;
-        private ComboBox cmbCompany;
-        private ComboBox cmbFestival;
-        private Label label3;
-        private NumericUpDown txtAmount;
+        private ComboBox cmbParticipant;
+        private Label label2;
     }
 }

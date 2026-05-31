@@ -38,7 +38,15 @@ public partial class CRUD : Form
                 LoadTechWorkersData();
                 LoadServiceData();
                 break;
-            case "SceneTab":
+            case "ScenesTab":
+                LoadScenesData();
+                break;
+            case "ParticipantsTab":
+                LoadParticipantsData();
+                LoadFriendshipsData();
+                break;
+            case "PerformancesTab":
+                LoadPerformancesData();
                 break;
         }
     }
@@ -82,7 +90,7 @@ public partial class CRUD : Form
 
     private void LoadLeadersData()
     {
-        string queryLeaders = "SELECT Id, Responsibility_area FROM Leaders";
+        string queryLeaders = "SELECT Id, Responsibility_area FROM Leader";
         DataTable dtLeaders = DbHelper.ExecuteQuery(queryLeaders);
         dgvLeader.DataSource = dtLeaders;
     }
@@ -96,9 +104,60 @@ public partial class CRUD : Form
 
     private void LoadServiceData()
     {
-        string queryService = "SELECT Id, Service_type, Provider FROM Service";
+        string queryService = "SELECT Staff_Id, Fest_name, Fest_start FROM Service";
         DataTable dtService = DbHelper.ExecuteQuery(queryService);
         dgvService.DataSource = dtService;
+    }
+
+    private void LoadScenesData()
+    {
+        string query = @"
+        SELECT s.Name, s.Capacity, s.Type, 
+            t.Document_number, t.Stage_area, t.Stage_height, t.Maximum_load
+        FROM Scenes s
+        LEFT JOIN Technical_data_sheets t ON s.Name = t.Stage_name";
+
+        DataTable dt = DbHelper.ExecuteQuery(query);
+        dgvScenes.DataSource = dt;
+    }
+
+    private void LoadParticipantsData()
+    {
+        string query = "SELECT ID, Name, Type FROM Participants";
+        DataTable dt = DbHelper.ExecuteQuery(query);
+        dgvParticipants.DataSource = dt;
+    }
+
+    private void LoadFriendshipsData()
+    {
+        string query = @"
+        SELECT 
+            f.Participant1_id, 
+            p1.Name, 
+            f.Participant2_id, 
+            p2.Name
+        FROM Friendships f
+        JOIN Participants p1 ON f.Participant1_id = p1.ID
+        JOIN Participants p2 ON f.Participant2_id = p2.ID";
+
+        DataTable dt = DbHelper.ExecuteQuery(query);
+        dgvFriendships.DataSource = dt;
+    }
+
+    private void LoadPerformancesData()
+    {
+        string query = @"
+        SELECT 
+            p.Festival_name AS [Фестиваль],
+            p.Festival_start AS [Початок фестивалю],
+            p.Event_name AS [Подія],
+            p.Stage_name AS [Сцена],
+            part.Name AS [Учасник]
+        FROM Performance p
+        JOIN Participants part ON p.Participant_id = part.ID";
+
+        DataTable dt = DbHelper.ExecuteQuery(query);
+        dgvPerformances.DataSource = dt;
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
@@ -259,6 +318,79 @@ public partial class CRUD : Form
         }
     }
 
+    private void btnAddScene_Click(object sender, EventArgs e)
+    {
+        using (var modal = new SceneEditForm())
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadScenesData();
+        }
+    }
+
+    private void btnEditScene_Click(object sender, EventArgs e)
+    {
+        if (dgvScenes.SelectedRows.Count == 0) return;
+
+        var row = dgvScenes.SelectedRows[0];
+        string name = row.Cells["Name"].Value.ToString();
+        string cap = row.Cells["Capacity"].Value.ToString();
+        string type = row.Cells["Type"].Value.ToString();
+
+        string doc = row.Cells["Document_Number"].Value.ToString();
+        string area = row.Cells["Stage_area"].Value.ToString();
+        string height = row.Cells["Stage_height"].Value.ToString();
+        string load = row.Cells["Maximum_load"].Value.ToString();
+
+        using (var modal = new SceneEditForm(name, cap, type, doc, area, height, load))
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadScenesData();
+        }
+    }
+
+    private void btnAddParticipant_Click(object sender, EventArgs e)
+    {
+        using (var modal = new ParticipantEditForm())
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadParticipantsData();
+        }
+    }
+
+    private void btnEditParticipant_Click(object sender, EventArgs e)
+    {
+        if (dgvParticipants.SelectedRows.Count == 0) return;
+
+        var row = dgvParticipants.SelectedRows[0];
+        int id = Convert.ToInt32(row.Cells["ID"].Value);
+        string name = row.Cells["Name"].Value.ToString();
+        string type = row.Cells["Type"].Value.ToString();
+
+        using (var modal = new ParticipantEditForm(id, name, type))
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadParticipantsData();
+        }
+    }
+
+    private void btnAddFriendship_Click(object sender, EventArgs e)
+    {
+        using (var modal = new FriendshipEditForm())
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadFriendshipsData();
+        }
+    }
+
+    private void btnAddPerformance_Click(object sender, EventArgs e)
+    {
+        using (var modal = new PerfomanceEditForm())
+        {
+            if (modal.ShowDialog() == DialogResult.OK)
+                LoadPerformancesData();
+        }
+    }
+
     private void btnDelete_Click(object sender, EventArgs e)
     {
         if (dgvSponsors.SelectedRows.Count != 0)
@@ -363,6 +495,11 @@ public partial class CRUD : Form
     }
 
     private void label5_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void label9_Click(object sender, EventArgs e)
     {
 
     }

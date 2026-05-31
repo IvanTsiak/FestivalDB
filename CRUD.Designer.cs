@@ -84,6 +84,30 @@ partial class CRUD
         button11 = new Button();
         button12 = new Button();
         ScenesTab = new TabPage();
+        dgvScenes = new DataGridView();
+        label9 = new Label();
+        panel9 = new Panel();
+        button19 = new Button();
+        button22 = new Button();
+        button23 = new Button();
+        ParticipantsTab = new TabPage();
+        dgvFriendships = new DataGridView();
+        label11 = new Label();
+        panel11 = new Panel();
+        button28 = new Button();
+        button29 = new Button();
+        dgvParticipants = new DataGridView();
+        label10 = new Label();
+        panel10 = new Panel();
+        button24 = new Button();
+        button25 = new Button();
+        button26 = new Button();
+        PerformancesTab = new TabPage();
+        dgvPerformances = new DataGridView();
+        label12 = new Label();
+        panel12 = new Panel();
+        button30 = new Button();
+        button31 = new Button();
         CRUDTab.SuspendLayout();
         SponsorsPage.SuspendLayout();
         panel1.SuspendLayout();
@@ -104,6 +128,17 @@ partial class CRUD
         panel6.SuspendLayout();
         ((ISupportInitialize)dgvStaff).BeginInit();
         panel5.SuspendLayout();
+        ScenesTab.SuspendLayout();
+        ((ISupportInitialize)dgvScenes).BeginInit();
+        panel9.SuspendLayout();
+        ParticipantsTab.SuspendLayout();
+        ((ISupportInitialize)dgvFriendships).BeginInit();
+        panel11.SuspendLayout();
+        ((ISupportInitialize)dgvParticipants).BeginInit();
+        panel10.SuspendLayout();
+        PerformancesTab.SuspendLayout();
+        ((ISupportInitialize)dgvPerformances).BeginInit();
+        panel12.SuspendLayout();
         SuspendLayout();
         // 
         // Return
@@ -122,6 +157,8 @@ partial class CRUD
         CRUDTab.Controls.Add(FestivalsTab);
         CRUDTab.Controls.Add(StaffTab);
         CRUDTab.Controls.Add(ScenesTab);
+        CRUDTab.Controls.Add(ParticipantsTab);
+        CRUDTab.Controls.Add(PerformancesTab);
         CRUDTab.Location = new Point(0, 23);
         CRUDTab.Name = "CRUDTab";
         CRUDTab.SelectedIndex = 0;
@@ -567,6 +604,7 @@ partial class CRUD
         button13.TabIndex = 5;
         button13.Text = "Редагувати";
         button13.UseVisualStyleBackColor = true;
+        button13.Click += btnEditLeader_Click;
         // 
         // button14
         // 
@@ -585,6 +623,7 @@ partial class CRUD
         button15.TabIndex = 2;
         button15.Text = "Додати";
         button15.UseVisualStyleBackColor = true;
+        button15.Click += btnAddLeader_Click;
         // 
         // dgvStaff
         // 
@@ -624,6 +663,7 @@ partial class CRUD
         button10.TabIndex = 5;
         button10.Text = "Редагувати";
         button10.UseVisualStyleBackColor = true;
+        button10.Click += btnEditStaff_Click;
         // 
         // button11
         // 
@@ -642,9 +682,14 @@ partial class CRUD
         button12.TabIndex = 2;
         button12.Text = "Додати";
         button12.UseVisualStyleBackColor = true;
+        button12.Click += btnAddStaff_Click;
         // 
         // ScenesTab
         // 
+        ScenesTab.AutoScroll = true;
+        ScenesTab.Controls.Add(dgvScenes);
+        ScenesTab.Controls.Add(label9);
+        ScenesTab.Controls.Add(panel9);
         ScenesTab.Location = new Point(4, 29);
         ScenesTab.Name = "ScenesTab";
         ScenesTab.Padding = new Padding(3);
@@ -652,6 +697,248 @@ partial class CRUD
         ScenesTab.TabIndex = 3;
         ScenesTab.Text = "Сцени";
         ScenesTab.UseVisualStyleBackColor = true;
+        // 
+        // dgvScenes
+        // 
+        dgvScenes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvScenes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvScenes.Location = new Point(0, 31);
+        dgvScenes.Name = "dgvScenes";
+        dgvScenes.RowHeadersWidth = 51;
+        dgvScenes.Size = new Size(794, 142);
+        dgvScenes.TabIndex = 17;
+        dgvScenes.Text = "dataGridView1";
+        // 
+        // label9
+        // 
+        label9.Location = new Point(0, 4);
+        label9.Name = "label9";
+        label9.Size = new Size(219, 24);
+        label9.TabIndex = 16;
+        label9.Text = "Сцени та їх технічні паспорти";
+        label9.Click += label9_Click;
+        // 
+        // panel9
+        // 
+        panel9.Controls.Add(button19);
+        panel9.Controls.Add(button22);
+        panel9.Controls.Add(button23);
+        panel9.Location = new Point(1, 179);
+        panel9.Name = "panel9";
+        panel9.Size = new Size(793, 43);
+        panel9.TabIndex = 18;
+        // 
+        // button19
+        // 
+        button19.Location = new Point(204, 0);
+        button19.Name = "button19";
+        button19.Size = new Size(94, 43);
+        button19.TabIndex = 5;
+        button19.Text = "Редагувати";
+        button19.UseVisualStyleBackColor = true;
+        button19.Click += btnEditScene_Click;
+        // 
+        // button22
+        // 
+        button22.Location = new Point(102, 0);
+        button22.Name = "button22";
+        button22.Size = new Size(96, 43);
+        button22.TabIndex = 4;
+        button22.Text = "Видалити";
+        button22.UseVisualStyleBackColor = true;
+        // 
+        // button23
+        // 
+        button23.Location = new Point(0, 0);
+        button23.Name = "button23";
+        button23.Size = new Size(96, 43);
+        button23.TabIndex = 2;
+        button23.Text = "Додати";
+        button23.UseVisualStyleBackColor = true;
+        button23.Click += btnAddScene_Click;
+        // 
+        // ParticipantsTab
+        // 
+        ParticipantsTab.AutoScroll = true;
+        ParticipantsTab.AutoScrollMinSize = new Size(0, 500);
+        ParticipantsTab.Controls.Add(dgvFriendships);
+        ParticipantsTab.Controls.Add(label11);
+        ParticipantsTab.Controls.Add(panel11);
+        ParticipantsTab.Controls.Add(dgvParticipants);
+        ParticipantsTab.Controls.Add(label10);
+        ParticipantsTab.Controls.Add(panel10);
+        ParticipantsTab.Location = new Point(4, 29);
+        ParticipantsTab.Name = "ParticipantsTab";
+        ParticipantsTab.Padding = new Padding(3);
+        ParticipantsTab.Size = new Size(794, 415);
+        ParticipantsTab.TabIndex = 4;
+        ParticipantsTab.Text = "Учасники";
+        ParticipantsTab.UseVisualStyleBackColor = true;
+        // 
+        // dgvFriendships
+        // 
+        dgvFriendships.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvFriendships.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvFriendships.Location = new Point(0, 255);
+        dgvFriendships.Name = "dgvFriendships";
+        dgvFriendships.RowHeadersWidth = 51;
+        dgvFriendships.Size = new Size(774, 142);
+        dgvFriendships.TabIndex = 20;
+        dgvFriendships.Text = "dataGridView1";
+        // 
+        // label11
+        // 
+        label11.Location = new Point(0, 228);
+        label11.Name = "label11";
+        label11.Size = new Size(153, 24);
+        label11.TabIndex = 19;
+        label11.Text = "Дружба";
+        // 
+        // panel11
+        // 
+        panel11.Controls.Add(button28);
+        panel11.Controls.Add(button29);
+        panel11.Location = new Point(1, 403);
+        panel11.Name = "panel11";
+        panel11.Size = new Size(773, 43);
+        panel11.TabIndex = 21;
+        // 
+        // button28
+        // 
+        button28.Location = new Point(102, 0);
+        button28.Name = "button28";
+        button28.Size = new Size(96, 43);
+        button28.TabIndex = 4;
+        button28.Text = "Видалити";
+        button28.UseVisualStyleBackColor = true;
+        // 
+        // button29
+        // 
+        button29.Location = new Point(0, 0);
+        button29.Name = "button29";
+        button29.Size = new Size(96, 43);
+        button29.TabIndex = 2;
+        button29.Text = "Додати";
+        button29.UseVisualStyleBackColor = true;
+        button29.Click += btnAddFriendship_Click;
+        // 
+        // dgvParticipants
+        // 
+        dgvParticipants.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvParticipants.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvParticipants.Location = new Point(0, 31);
+        dgvParticipants.Name = "dgvParticipants";
+        dgvParticipants.RowHeadersWidth = 51;
+        dgvParticipants.Size = new Size(774, 142);
+        dgvParticipants.TabIndex = 17;
+        dgvParticipants.Text = "dataGridView1";
+        // 
+        // label10
+        // 
+        label10.Location = new Point(0, 4);
+        label10.Name = "label10";
+        label10.Size = new Size(153, 24);
+        label10.TabIndex = 16;
+        label10.Text = "Учасники";
+        // 
+        // panel10
+        // 
+        panel10.Controls.Add(button24);
+        panel10.Controls.Add(button25);
+        panel10.Controls.Add(button26);
+        panel10.Location = new Point(1, 179);
+        panel10.Name = "panel10";
+        panel10.Size = new Size(773, 43);
+        panel10.TabIndex = 18;
+        // 
+        // button24
+        // 
+        button24.Location = new Point(204, 0);
+        button24.Name = "button24";
+        button24.Size = new Size(94, 43);
+        button24.TabIndex = 5;
+        button24.Text = "Редагувати";
+        button24.UseVisualStyleBackColor = true;
+        button24.Click += btnAddParticipant_Click;
+        // 
+        // button25
+        // 
+        button25.Location = new Point(102, 0);
+        button25.Name = "button25";
+        button25.Size = new Size(96, 43);
+        button25.TabIndex = 4;
+        button25.Text = "Видалити";
+        button25.UseVisualStyleBackColor = true;
+        // 
+        // button26
+        // 
+        button26.Location = new Point(0, 0);
+        button26.Name = "button26";
+        button26.Size = new Size(96, 43);
+        button26.TabIndex = 2;
+        button26.Text = "Додати";
+        button26.UseVisualStyleBackColor = true;
+        button26.Click += btnAddParticipant_Click;
+        // 
+        // PerformancesTab
+        // 
+        PerformancesTab.Controls.Add(dgvPerformances);
+        PerformancesTab.Controls.Add(label12);
+        PerformancesTab.Controls.Add(panel12);
+        PerformancesTab.Location = new Point(4, 29);
+        PerformancesTab.Name = "PerformancesTab";
+        PerformancesTab.Padding = new Padding(3);
+        PerformancesTab.Size = new Size(794, 415);
+        PerformancesTab.TabIndex = 5;
+        PerformancesTab.Text = "Виступи";
+        PerformancesTab.UseVisualStyleBackColor = true;
+        // 
+        // dgvPerformances
+        // 
+        dgvPerformances.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        dgvPerformances.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        dgvPerformances.Location = new Point(0, 32);
+        dgvPerformances.Name = "dgvPerformances";
+        dgvPerformances.RowHeadersWidth = 51;
+        dgvPerformances.Size = new Size(794, 142);
+        dgvPerformances.TabIndex = 20;
+        dgvPerformances.Text = "dataGridView1";
+        // 
+        // label12
+        // 
+        label12.Location = new Point(0, 5);
+        label12.Name = "label12";
+        label12.Size = new Size(153, 24);
+        label12.TabIndex = 19;
+        label12.Text = "Виступи";
+        // 
+        // panel12
+        // 
+        panel12.Controls.Add(button30);
+        panel12.Controls.Add(button31);
+        panel12.Location = new Point(1, 180);
+        panel12.Name = "panel12";
+        panel12.Size = new Size(793, 43);
+        panel12.TabIndex = 21;
+        // 
+        // button30
+        // 
+        button30.Location = new Point(102, 0);
+        button30.Name = "button30";
+        button30.Size = new Size(96, 43);
+        button30.TabIndex = 4;
+        button30.Text = "Видалити";
+        button30.UseVisualStyleBackColor = true;
+        // 
+        // button31
+        // 
+        button31.Location = new Point(0, 0);
+        button31.Name = "button31";
+        button31.Size = new Size(96, 43);
+        button31.TabIndex = 2;
+        button31.Text = "Додати";
+        button31.UseVisualStyleBackColor = true;
+        button31.Click += btnAddPerformance_Click;
         // 
         // CRUD
         // 
@@ -682,6 +969,17 @@ partial class CRUD
         panel6.ResumeLayout(false);
         ((ISupportInitialize)dgvStaff).EndInit();
         panel5.ResumeLayout(false);
+        ScenesTab.ResumeLayout(false);
+        ((ISupportInitialize)dgvScenes).EndInit();
+        panel9.ResumeLayout(false);
+        ParticipantsTab.ResumeLayout(false);
+        ((ISupportInitialize)dgvFriendships).EndInit();
+        panel11.ResumeLayout(false);
+        ((ISupportInitialize)dgvParticipants).EndInit();
+        panel10.ResumeLayout(false);
+        PerformancesTab.ResumeLayout(false);
+        ((ISupportInitialize)dgvPerformances).EndInit();
+        panel12.ResumeLayout(false);
         ResumeLayout(false);
     }
 
@@ -745,4 +1043,28 @@ partial class CRUD
     private Button button11;
     private Button button12;
     private TabPage ScenesTab;
+    private DataGridView dgvScenes;
+    private Label label9;
+    private Panel panel9;
+    private Button button19;
+    private Button button22;
+    private Button button23;
+    private TabPage ParticipantsTab;
+    private DataGridView dgvFriendships;
+    private Label label11;
+    private Panel panel11;
+    private Button button28;
+    private Button button29;
+    private DataGridView dgvParticipants;
+    private Label label10;
+    private Panel panel10;
+    private Button button24;
+    private Button button25;
+    private Button button26;
+    private TabPage PerformancesTab;
+    private DataGridView dgvPerformances;
+    private Label label12;
+    private Panel panel12;
+    private Button button30;
+    private Button button31;
 }

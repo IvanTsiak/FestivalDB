@@ -27,6 +27,6 @@ public partial class MainForm : Form
         
         queriesForm.Show();
         
-        this.Close();
+        this.Hide();
     }
 }

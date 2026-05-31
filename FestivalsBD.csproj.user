@@ -10,10 +10,22 @@
     <Compile Update="FinancingEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FriendshipEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LeaderEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ParticipantEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PerfomanceEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SceneEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ServiceEditForm.cs">
