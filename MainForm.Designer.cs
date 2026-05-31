@@ -62,6 +62,7 @@ partial class MainForm
         button1.TabIndex = 2;
         button1.Text = "Запити із множинними порівняннями";
         button1.UseVisualStyleBackColor = true;
+        button1.Click += ToHardQueriesButton_Click;
         // 
         // MainForm
         // 

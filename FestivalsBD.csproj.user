@@ -13,6 +13,9 @@
     <Compile Update="FriendshipEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="HardQueries.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LeaderEditForm.cs">
       <SubType>Form</SubType>
     </Compile>

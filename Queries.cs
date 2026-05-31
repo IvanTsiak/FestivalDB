@@ -78,11 +78,7 @@ public partial class Queries : Form
         DateTime festStart = DateTime.Parse(festParts[1]);
 
         string query = @"
-                SELECT 
-                    e.Name AS [Назва події], 
-                    e.Day AS [Дата проведення], 
-                    e.Start_time AS [Час початку],
-                    f.Theme AS [Тематика фестивалю]
+                SELECT e.Name, e.Day, e.Start_time, f.Theme
                 FROM Events e
                 INNER JOIN Festivals f 
                     ON e.Festival = f.Name AND e.Start_festival = f.Start_date
@@ -136,10 +132,7 @@ public partial class Queries : Form
         decimal minLoad = numLoad.Value;
 
         string query = @"
-        SELECT s.Name, s.Type,
-            t.Document_number,
-            t.Stage_area,
-            t.Maximum_load
+        SELECT s.Name, s.Type, t.Document_number, t.Stage_area, t.Maximum_load
         FROM Scenes s
         INNER JOIN Technical_data_sheets t ON s.Name = t.Stage_name
         WHERE t.Stage_area > @area AND t.Maximum_load > @load";
@@ -162,10 +155,7 @@ public partial class Queries : Form
         }
 
         string query = @"
-        SELECT 
-            s.Name, 
-            s.Phone_number, 
-            l.Responsibility_area
+        SELECT s.Name, s.Phone_number, l.Responsibility_area
         FROM Staff s
         INNER JOIN Leader l ON s.Id = l.Id
         WHERE l.Responsibility_area LIKE @areaSearch";

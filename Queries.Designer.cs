@@ -129,6 +129,7 @@ partial class Queries
         dgvResultQ1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvResultQ1.Location = new Point(0, 222);
         dgvResultQ1.Name = "dgvResultQ1";
+        dgvResultQ1.ReadOnly = true;
         dgvResultQ1.RowHeadersWidth = 51;
         dgvResultQ1.Size = new Size(786, 142);
         dgvResultQ1.TabIndex = 22;
@@ -295,6 +296,7 @@ partial class Queries
         dgvResultQ3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvResultQ3.Location = new Point(0, 240);
         dgvResultQ3.Name = "dgvResultQ3";
+        dgvResultQ3.ReadOnly = true;
         dgvResultQ3.RowHeadersWidth = 51;
         dgvResultQ3.Size = new Size(786, 142);
         dgvResultQ3.TabIndex = 28;
@@ -316,6 +318,7 @@ partial class Queries
         btnRunQ3.TabIndex = 26;
         btnRunQ3.Text = "Виконати";
         btnRunQ3.UseVisualStyleBackColor = true;
+        btnRunQ3.Click += btnRunQ3_Click;
         // 
         // label7
         // 
@@ -364,6 +367,7 @@ partial class Queries
         dgvResultQ4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvResultQ4.Location = new Point(0, 223);
         dgvResultQ4.Name = "dgvResultQ4";
+        dgvResultQ4.ReadOnly = true;
         dgvResultQ4.RowHeadersWidth = 51;
         dgvResultQ4.Size = new Size(786, 142);
         dgvResultQ4.TabIndex = 28;

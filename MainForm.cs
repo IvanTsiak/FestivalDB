@@ -29,4 +29,13 @@ public partial class MainForm : Form
         
         this.Hide();
     }
+
+    private void ToHardQueriesButton_Click(object sender, EventArgs e)
+    {
+        HardQueries queriesForm = new HardQueries();
+
+        queriesForm.Show();
+
+        this.Hide();
+    }
 }

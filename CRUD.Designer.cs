@@ -226,11 +226,11 @@ partial class CRUD
         dgvSponsors.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvSponsors.Location = new Point(-4, 27);
         dgvSponsors.Name = "dgvSponsors";
+        dgvSponsors.ReadOnly = true;
         dgvSponsors.RowHeadersWidth = 51;
         dgvSponsors.Size = new Size(798, 142);
         dgvSponsors.TabIndex = 2;
         dgvSponsors.Text = "dataGridView1";
-        dgvSponsors.CellContentClick += dataGridView1_CellContentClick;
         // 
         // label1
         // 
@@ -239,12 +239,11 @@ partial class CRUD
         label1.Size = new Size(174, 24);
         label1.TabIndex = 1;
         label1.Text = "Спонсори";
-        label1.Click += label1_Click;
         // 
         // FestivalsTab
         // 
         FestivalsTab.AutoScroll = true;
-        FestivalsTab.AutoScrollMinSize = new Size(0, 15000);
+        FestivalsTab.AutoScrollMinSize = new Size(0, 240);
         FestivalsTab.Controls.Add(dgvFinancing);
         FestivalsTab.Controls.Add(label4);
         FestivalsTab.Controls.Add(panel4);
@@ -261,7 +260,6 @@ partial class CRUD
         FestivalsTab.TabIndex = 1;
         FestivalsTab.Text = "Фестивалі";
         FestivalsTab.UseVisualStyleBackColor = true;
-        FestivalsTab.Click += tabPage2_Click;
         // 
         // dgvFinancing
         // 
@@ -269,6 +267,7 @@ partial class CRUD
         dgvFinancing.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvFinancing.Location = new Point(0, 501);
         dgvFinancing.Name = "dgvFinancing";
+        dgvFinancing.ReadOnly = true;
         dgvFinancing.RowHeadersWidth = 51;
         dgvFinancing.Size = new Size(774, 142);
         dgvFinancing.TabIndex = 17;
@@ -310,6 +309,7 @@ partial class CRUD
         button8.TabIndex = 4;
         button8.Text = "Видалити";
         button8.UseVisualStyleBackColor = true;
+        button8.Click += btnDeleteFinancing_Click;
         // 
         // button9
         // 
@@ -327,6 +327,7 @@ partial class CRUD
         dgvEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvEvents.Location = new Point(0, 265);
         dgvEvents.Name = "dgvEvents";
+        dgvEvents.ReadOnly = true;
         dgvEvents.RowHeadersWidth = 51;
         dgvEvents.Size = new Size(774, 142);
         dgvEvents.TabIndex = 14;
@@ -349,7 +350,6 @@ partial class CRUD
         panel2.Name = "panel2";
         panel2.Size = new Size(773, 43);
         panel2.TabIndex = 15;
-        panel2.Paint += panel2_Paint;
         // 
         // button4
         // 
@@ -369,6 +369,7 @@ partial class CRUD
         button5.TabIndex = 4;
         button5.Text = "Видалити";
         button5.UseVisualStyleBackColor = true;
+        button5.Click += btnDeleteEvent_Click;
         // 
         // button6
         // 
@@ -386,6 +387,7 @@ partial class CRUD
         dgvFestivals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvFestivals.Location = new Point(0, 28);
         dgvFestivals.Name = "dgvFestivals";
+        dgvFestivals.ReadOnly = true;
         dgvFestivals.RowHeadersWidth = 51;
         dgvFestivals.Size = new Size(774, 142);
         dgvFestivals.TabIndex = 11;
@@ -427,6 +429,7 @@ partial class CRUD
         button3.TabIndex = 4;
         button3.Text = "Видалити";
         button3.UseVisualStyleBackColor = true;
+        button3.Click += btnDeleteFestival_Click;
         // 
         // button1
         // 
@@ -441,7 +444,7 @@ partial class CRUD
         // StaffTab
         // 
         StaffTab.AutoScroll = true;
-        StaffTab.AutoScrollMinSize = new Size(0, 1500);
+        StaffTab.AutoScrollMinSize = new Size(0, 160);
         StaffTab.Controls.Add(dgvService);
         StaffTab.Controls.Add(label8);
         StaffTab.Controls.Add(panel8);
@@ -468,6 +471,7 @@ partial class CRUD
         dgvService.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvService.Location = new Point(0, 699);
         dgvService.Name = "dgvService";
+        dgvService.ReadOnly = true;
         dgvService.RowHeadersWidth = 51;
         dgvService.Size = new Size(774, 142);
         dgvService.TabIndex = 23;
@@ -515,6 +519,7 @@ partial class CRUD
         dgvTechnicalWorker.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvTechnicalWorker.Location = new Point(1, 474);
         dgvTechnicalWorker.Name = "dgvTechnicalWorker";
+        dgvTechnicalWorker.ReadOnly = true;
         dgvTechnicalWorker.RowHeadersWidth = 51;
         dgvTechnicalWorker.Size = new Size(774, 142);
         dgvTechnicalWorker.TabIndex = 20;
@@ -556,6 +561,7 @@ partial class CRUD
         button17.TabIndex = 4;
         button17.Text = "Видалити";
         button17.UseVisualStyleBackColor = true;
+        button17.Click += btnDeleteTechWorker_Click;
         // 
         // button18
         // 
@@ -573,6 +579,7 @@ partial class CRUD
         dgvLeader.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvLeader.Location = new Point(0, 253);
         dgvLeader.Name = "dgvLeader";
+        dgvLeader.ReadOnly = true;
         dgvLeader.RowHeadersWidth = 51;
         dgvLeader.Size = new Size(774, 142);
         dgvLeader.TabIndex = 17;
@@ -614,6 +621,7 @@ partial class CRUD
         button14.TabIndex = 4;
         button14.Text = "Видалити";
         button14.UseVisualStyleBackColor = true;
+        button14.Click += btnDeleteLeader_Click;
         // 
         // button15
         // 
@@ -631,6 +639,7 @@ partial class CRUD
         dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvStaff.Location = new Point(0, 32);
         dgvStaff.Name = "dgvStaff";
+        dgvStaff.ReadOnly = true;
         dgvStaff.RowHeadersWidth = 51;
         dgvStaff.Size = new Size(774, 142);
         dgvStaff.TabIndex = 14;
@@ -643,7 +652,6 @@ partial class CRUD
         label5.Size = new Size(153, 24);
         label5.TabIndex = 13;
         label5.Text = "Персонал";
-        label5.Click += label5_Click;
         // 
         // panel5
         // 
@@ -673,6 +681,7 @@ partial class CRUD
         button11.TabIndex = 4;
         button11.Text = "Видалити";
         button11.UseVisualStyleBackColor = true;
+        button11.Click += btnDeleteStaff_Click;
         // 
         // button12
         // 
@@ -704,6 +713,7 @@ partial class CRUD
         dgvScenes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvScenes.Location = new Point(0, 31);
         dgvScenes.Name = "dgvScenes";
+        dgvScenes.ReadOnly = true;
         dgvScenes.RowHeadersWidth = 51;
         dgvScenes.Size = new Size(794, 142);
         dgvScenes.TabIndex = 17;
@@ -716,7 +726,6 @@ partial class CRUD
         label9.Size = new Size(219, 24);
         label9.TabIndex = 16;
         label9.Text = "Сцени та їх технічні паспорти";
-        label9.Click += label9_Click;
         // 
         // panel9
         // 
@@ -746,6 +755,7 @@ partial class CRUD
         button22.TabIndex = 4;
         button22.Text = "Видалити";
         button22.UseVisualStyleBackColor = true;
+        button22.Click += btnDeleteScene_Click;
         // 
         // button23
         // 
@@ -760,7 +770,7 @@ partial class CRUD
         // ParticipantsTab
         // 
         ParticipantsTab.AutoScroll = true;
-        ParticipantsTab.AutoScrollMinSize = new Size(0, 500);
+        ParticipantsTab.AutoScrollMinSize = new Size(0, 310);
         ParticipantsTab.Controls.Add(dgvFriendships);
         ParticipantsTab.Controls.Add(label11);
         ParticipantsTab.Controls.Add(panel11);
@@ -781,6 +791,7 @@ partial class CRUD
         dgvFriendships.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvFriendships.Location = new Point(0, 255);
         dgvFriendships.Name = "dgvFriendships";
+        dgvFriendships.ReadOnly = true;
         dgvFriendships.RowHeadersWidth = 51;
         dgvFriendships.Size = new Size(774, 142);
         dgvFriendships.TabIndex = 20;
@@ -811,6 +822,7 @@ partial class CRUD
         button28.TabIndex = 4;
         button28.Text = "Видалити";
         button28.UseVisualStyleBackColor = true;
+        button28.Click += btnDeleteFriendship_Click;
         // 
         // button29
         // 
@@ -828,6 +840,7 @@ partial class CRUD
         dgvParticipants.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvParticipants.Location = new Point(0, 31);
         dgvParticipants.Name = "dgvParticipants";
+        dgvParticipants.ReadOnly = true;
         dgvParticipants.RowHeadersWidth = 51;
         dgvParticipants.Size = new Size(774, 142);
         dgvParticipants.TabIndex = 17;
@@ -869,6 +882,7 @@ partial class CRUD
         button25.TabIndex = 4;
         button25.Text = "Видалити";
         button25.UseVisualStyleBackColor = true;
+        button25.Click += btnDeleteParticipant_Click;
         // 
         // button26
         // 
@@ -899,6 +913,7 @@ partial class CRUD
         dgvPerformances.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         dgvPerformances.Location = new Point(0, 32);
         dgvPerformances.Name = "dgvPerformances";
+        dgvPerformances.ReadOnly = true;
         dgvPerformances.RowHeadersWidth = 51;
         dgvPerformances.Size = new Size(794, 142);
         dgvPerformances.TabIndex = 20;
@@ -929,6 +944,7 @@ partial class CRUD
         button30.TabIndex = 4;
         button30.Text = "Видалити";
         button30.UseVisualStyleBackColor = true;
+        button30.Click += btnDeletePerformance_Click;
         // 
         // button31
         // 
