@@ -55,8 +55,6 @@ namespace FestivalsBD
                         SET Name = @newName, Capacity = @cap, Type = @type 
                         WHERE Name = @oldName;
                         
-                        -- 2. Оновлюємо Паспорт. Шукаємо вже за @newName (бо каскад вже спрацював рядок вище)
-                        -- IF EXISTS потрібен, якщо раптом сцени є, а паспорта до неї ще не було
                         IF EXISTS (SELECT 1 FROM Technical_data_sheets WHERE Stage_name = @newName)
                             UPDATE Technical_data_sheets 
                             SET Document_number = @doc, Stage_area = @area, Stage_height = @height, Maximum_load = @load 

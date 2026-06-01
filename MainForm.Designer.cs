@@ -29,9 +29,12 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         ToCRUDButton = new Button();
         ToQueriesButton = new Button();
         button1 = new Button();
+        pictureBox1 = new PictureBox();
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
         // ToCRUDButton
@@ -64,18 +67,29 @@ partial class MainForm
         button1.UseVisualStyleBackColor = true;
         button1.Click += ToHardQueriesButton_Click;
         // 
+        // pictureBox1
+        // 
+        pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+        pictureBox1.Location = new Point(171, 12);
+        pictureBox1.Name = "pictureBox1";
+        pictureBox1.Size = new Size(510, 198);
+        pictureBox1.TabIndex = 3;
+        pictureBox1.TabStop = false;
+        // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(852, 485);
+        Controls.Add(pictureBox1);
         Controls.Add(button1);
         Controls.Add(ToQueriesButton);
         Controls.Add(ToCRUDButton);
         Name = "MainForm";
         StartPosition = FormStartPosition.CenterScreen;
-        Text = "FestivalsBD";
+        Text = "Festival DB";
         Load += Form1_Load;
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ResumeLayout(false);
     }
 
@@ -86,4 +100,5 @@ partial class MainForm
     #endregion
 
     private Button button1;
+    private PictureBox pictureBox1;
 }

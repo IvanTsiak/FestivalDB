@@ -158,11 +158,11 @@ public partial class Queries : Form
         SELECT s.Name, s.Phone_number, l.Responsibility_area
         FROM Staff s
         INNER JOIN Leader l ON s.Id = l.Id
-        WHERE l.Responsibility_area LIKE @areaSearch";
+        WHERE l.Responsibility_area = @areaSearch";
 
         SqlParameter[] p = {
 
-        new SqlParameter("@areaSearch", $"%{txtAreaQ4.Text}%")
+        new SqlParameter("@areaSearch", txtAreaQ4.Text)
     };
 
         DataTable result = DbHelper.ExecuteQuery(query, p);
